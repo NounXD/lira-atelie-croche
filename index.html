@@ -1,430 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="RE_wosAN_wvgEU_jtLiNisuC3r3-7RUX_KFcELN2Y" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lira Ateliê & Crochê</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    @keyframes logoMotion {
-      0%, 100% {
-        transform: scale(1) translateY(0);
-        box-shadow: 0 0 0 rgba(236, 72, 153, 0.4);
-      }
-      50% {
-        transform: scale(1.05) translateY(-8px);
-        box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
-    .logo-animate {
-      animation: logoMotion 4s ease-in-out infinite;
+    body {
+      background-color: #fffaf6;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .produto {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .produto h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .produto span {
+      font-weight: bold;
+      color: #c06;
+    }
+
+    .whatsapp {
+      display: block;
+      margin: 30px auto;
+      width: fit-content;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* 💻 Desktop */
+    @media (min-width: 768px) {
+      .produtos {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <div class="flex items-center gap-2">
-       <img src="logo-croche.jfif"
-     alt="Logo Lira Ateliê & Crochê"
-     class="h-10 w-10 rounded-full object-contain" />
-        <h1 class="text-2xl font-bold text-pink-600">Lira Ateliê&Crochê</h1>
-      </div>
-      <nav class="space-x-4 flex items-center">
-        <a href="#inicio" class="hover:text-pink-600">Início</a>
-        <a href="#produtos" class="hover:text-pink-600">Produtos</a>
-        <a href="#materiais" class="hover:text-pink-600">Materiais</a>
-        <a href="#contato" class="hover:text-pink-600">Contato</a>
-        <a href="https://shopee.com.br/juanesdras?page=0" target="_blank" class="hover:text-pink-600 font-semibold">Shopee</a>
-        <button id="open-cart" class="relative ml-2 text-2xl focus:outline-none" title="Carrinho">🛒<span id="cart-count" class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full px-1">0</span></button>
-      </nav>
-    </div>
+  <header>
+    <img src="logo-croche.jfif" alt="Lira Ateliê & Crochê">
+    <h1>Lira Ateliê & Crochê</h1>
+    <p>Peças artesanais feitas com amor 💖</p>
   </header>
 
-  <!-- Hero -->
-  <section id="inicio" class="bg-pink-100">
-    <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h2 class="text-4xl font-bold mb-4">Peças em crochê feitas à mão com amor. &#128150; <!-- 💖 --></h2>
-        <p class="mb-6">Amigurumis, bonecos e peças decorativas em algodão e barbante. Cada criação é única, pensada para encantar e durar.</p>
-        <a href="#contato" class="bg-pink-600 text-white px-6 py-3 rounded-xl shadow hover:bg-pink-700">Fale comigo</a>
-      </div>
-      <div class="bg-white rounded-full shadow-lg h-72 w-72 flex items-center justify-center mx-auto">
-       <img src="logo-croche.jfif"
-     alt="Logo Lira Ateliê & Crochê"
-     class="max-h-64 w-auto object-contain rounded-full logo-animate" />
+  <main>
+    <section class="produtos">
 
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Produtos -->
-  <section id="produtos" class="max-w-6xl mx-auto px-6 py-16">
-    <h3 class="text-3xl font-bold text-center mb-10">Produtos</h3>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-      <!-- Produto: Passadeira -->
-      <div class="bg-white rounded-2xl shadow p-4 product-card cursor-pointer" data-name="Passadeira em Crochê" data-desc="Passadeira artesanal em crochê, feita à mão, ideal para decoração e uso no dia a dia." data-image="Passadeira.jpeg" data-price="99.90">
-        <img src="passadeira.jpeg"
-     alt="Passadeira em crochê"
-     class="h-40 w-full object-cover rounded-xl mb-4" />
-        <h4 class="font-semibold">Passadeira em Crochê</h4>
-        <p class="text-sm text-gray-600">Tamanho: 1,40 x 0,50 m</p>
-        <p class="text-lg font-bold text-pink-600 mb-3">R$ 99,90</p>
-        <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-700" data-name="Passadeira em Crochê (1,40 x 0,50 m)" data-price="99.90">Adicionar ao carrinho</button>
+      <div class="produto">
+        <img src="souplat-natalino.jpg" alt="Souplat Natalino">
+        <h2>Souplat Natalino</h2>
+        <span>R$ 103,96</span>
       </div>
 
-      <!-- Produto: Souplat Natalino -->
-      <div class="bg-white rounded-2xl shadow p-4 product-card cursor-pointer" data-name="Souplat Natalino em Crochê" data-desc="Souplat redondo em crochê com cores natalinas, perfeito para decorar a mesa e encantar nas ceias." data-image="souplat-natalino.jpg" data-price="25.99">
-       <img src="souplat-natalino.jpg"
-     alt="Souplat Natalino em crochê"
-     class="h-40 w-full object-cover rounded-xl mb-4" />
-        <h4 class="font-semibold">Souplat Natalino em Crochê</h4>
-        <p class="text-sm text-gray-600">Modelo redondo decorativo</p>
-        <div class="space-y-2">
-    <button
-      class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-700"
-      data-name="Souplat Natalino (Unidade)"
-      data-price="28.99">
-      Unidade — R$ 28,99
-    </button>
-
-    <button
-      class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 4x Souplat Natalino"
-      data-price="103.96">
-      Kit 4x — R$ 25,99 cada
-    </button>
-
-    <button
-      class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 6x Souplat Natalino"
-      data-price="155.94">
-      Kit 6x — R$ 25,99 cada
-    </button>
-  </div>
-</div>
-
-      <!-- Souplat Azul Floral -->
-<div class="bg-white rounded-2xl shadow p-4 product-card cursor-pointer"
-     data-name="Souplat Azul Floral em Crochê"
-     data-desc="Souplat artesanal em crochê azul floral, feito à mão com detalhe central delicado."
-     data-image="soupla-azul.jfif"
-     data-price="24.90">
-
-  <img src="soupla-azul.jfif"
-     alt="Souplat Azul Floral em crochê"
-     class="h-40 w-full object-cover rounded-xl mb-4" />
-
-  <h4 class="font-semibold">Souplat Azul Floral em Crochê</h4>
-  <p class="text-sm text-gray-600 mb-2">Peça artesanal com detalhe floral</p>
-
-  <div class="space-y-2">
-    <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-700"
-      data-name="Souplat Azul Floral (Unidade)"
-      data-price="24.90">
-      Unidade — R$ 24,90
-    </button>
-
-    <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 4x Souplat Azul Floral"
-      data-price="87.60">
-      Kit 4x — R$ 21,90 cada
-    </button>
-
-    <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 6x Souplat Azul Floral"
-      data-price="131.40">
-      Kit 6x — R$ 21,90 cada
-    </button>
-  </div>
-</div>
-
-
-<!-- Souplat Azul Claro -->
-<div class="bg-white rounded-2xl shadow p-4 product-card cursor-pointer"
-     data-name="Souplat Azul Claro em Crochê"
-     data-desc="Souplat redondo em crochê azul claro, feito à mão com acabamento delicado."
-     data-image="soupla-azul-claro.jfif"
-     data-price="32.90">
-
-  <img src="soupla-azul.jfif"
-     alt="Souplat Azul Floral em crochê"
-     class="h-40 w-full object-cover rounded-xl mb-4" />
-
-
-  <h4 class="font-semibold">Souplat Azul Claro em Crochê</h4>
-  <p class="text-sm text-gray-600 mb-2">Modelo redondo com acabamento delicado</p>
-
-  <div class="space-y-2">
-    <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-700"
-      data-name="Souplat Azul Claro (Unidade)"
-      data-price="32.90">
-      Unidade — R$ 32,90
-    </button>
-
-    <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 4x Souplat Azul Claro"
-      data-price="111.60">
-      Kit 4x — R$ 27,90 cada
-    </button>
-
-    <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-600"
-      data-name="Kit 6x Souplat Azul Claro"
-      data-price="167.40">
-      Kit 6x — R$ 27,90 cada
-    </button>
-  </div>
-</div>
-
-     <!-- Produto: Sob encomenda -->
-      <div class="h-40 bg-pink-100 rounded-xl mb-4 flex flex-col items-center justify-center text-pink-700 font-bold text-xl">
-  <span>Do seu jeito</span>
-  <span class="text-3xl mt-2">👉</span>
-        <p class="text-sm text-gray-600 mb-3">Personalizamos do seu jeito. Consulte valores.</p>
-        <button class="add-to-cart bg-pink-600 text-white px-4 py-2 rounded-lg w-full hover:bg-pink-700" data-name="Peça Sob Encomenda" data-price="0">Adicionar ao carrinho</button>
+      <div class="produto">
+        <img src="soupla-azul.jfif" alt="Souplat Azul">
+        <h2>Souplat Azul</h2>
+        <span>Consulte</span>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Materiais -->
-  <section id="materiais" class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <h3 class="text-3xl font-bold text-center mb-10">Nossos Materiais</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-pink-50 p-6 rounded-2xl shadow">
-          <h4 class="text-xl font-semibold mb-2">Linha 100% Algodão!</h4>
-          <p>Ideal para peças delicadas como amigurumis e bonecos. Possui toque macio, acabamento fino e cores vivas, garantindo beleza e conforto.</p>
-        </div>
-        <div class="bg-pink-50 p-6 rounded-2xl shadow">
-          <h4 class="text-xl font-semibold mb-2">Barbante 85% Algodão!</h4>
-          <p>Mais encorpado e resistente, perfeito para tapetes, cestos e peças utilitárias. Oferece durabilidade e estrutura para o dia a dia.</p>
-        </div>
+      <div class="produto">
+        <img src="soupla-azul-claro.jfif" alt="Souplat Azul Claro">
+        <h2>Souplat Azul Claro</h2>
+        <span>Consulte</span>
       </div>
-    </div>
-  </section>
 
-  <!-- Contato -->
-  <section id="contato" class="bg-pink-100">
-    <div class="max-w-6xl mx-auto px-6 py-16 text-center">
-      <h3 class="text-3xl font-bold mb-6">Entre em contato</h3>
-      <p class="mb-8">Faça sua encomenda ou tire suas dúvidas pelas nossas redes:</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="https://wa.me/5581985812365" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-xl shadow hover:bg-green-600">Chamar no WhatsApp</a>
-        <a href="https://www.instagram.com/lira_atelie_croche/" target="_blank" class="bg-pink-600 text-white px-6 py-3 rounded-xl shadow hover:bg-pink-700">Seguir no Instagram</a>
-      </div>
-      <p class="text-sm text-gray-600 mt-4">* Substitua o número do WhatsApp e o @ do Instagram pelos dados da sua loja.</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Carrinho -->
-  <!-- Painel Lateral do Carrinho -->
-  <div id="cart-panel" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
-    <div class="flex items-center justify-between p-4 border-b">
-      <h3 class="text-xl font-bold">Seu Carrinho</h3>
-      <button id="close-cart" class="text-2xl">✖</button>
-    </div>
-    <div class="flex-1 overflow-y-auto p-4">
-      <ul id="cart-items" class="space-y-2"></ul>
-      <p id="empty-cart" class="text-center text-gray-500 mt-4">Seu carrinho está vazio.</p>
-    </div>
-    <div class="p-4 border-t">
-      <p id="cart-total" class="text-center font-bold text-xl mb-3"></p>
-      <textarea id="cart-notes" class="w-full border rounded-lg p-2 mb-3" rows="3" placeholder="Observações do pedido (cores, medidas, etc.)"></textarea>
-      <button id="finalize" class="w-full bg-green-500 text-white px-6 py-3 rounded-xl shadow hover:bg-green-600 disabled:opacity-50" disabled>
-        Finalizar pedido no WhatsApp
-      </button>
-    </div>
-  </div>
+    <a class="whatsapp" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
+      📲 Fazer pedido no WhatsApp
+    </a>
+  </main>
 
-  <!-- Footer -->
-  <!-- Modal Produto -->
-  <div id="product-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 relative">
-      <button id="close-modal" class="absolute top-3 right-3 text-2xl">✖</button>
-      <img id="modal-image" src="" alt="Produto" class="w-full h-64 object-contain rounded-xl mb-4" />
-      <h3 id="modal-name" class="text-2xl font-bold mb-2"></h3>
-      <p id="modal-desc" class="text-gray-600 mb-3"></p>
-      <p id="modal-price" class="text-xl font-bold text-pink-600 mb-4"></p>
-      <button id="modal-add" class="bg-pink-600 text-white px-6 py-3 rounded-xl w-full hover:bg-pink-700">Adicionar ao carrinho</button>
-    </div>
-  </div>
-
-  <footer class="bg-white text-center p-4 text-sm text-gray-500">
-    © 2025 - Lira Ateliê&Crochê. Feito com carinho.
+  <footer>
+    © 2025 — Lira Ateliê & Crochê
   </footer>
 
-<script>
-    const buttons = document.querySelectorAll('.add-to-cart');
-    const cartList = document.getElementById('cart-items');
-    const emptyCart = document.getElementById('empty-cart');
-    const finalizeBtn = document.getElementById('finalize');
-    const totalEl = document.getElementById('cart-total');
-    const countEl = document.getElementById('cart-count');
-    const notesEl = document.getElementById('cart-notes');
-    const panel = document.getElementById('cart-panel');
-    const openBtn = document.getElementById('open-cart');
-    const closeBtn = document.getElementById('close-cart');
-    const WHATSAPP_NUMBER = '5581985812365';
-
-    let cart = JSON.parse(localStorage.getItem('lira_cart')) || [];
-
-    openBtn.addEventListener('click', () => panel.classList.remove('translate-x-full'));
-    closeBtn.addEventListener('click', () => panel.classList.add('translate-x-full'));
-
-    function saveCart() {
-      localStorage.setItem('lira_cart', JSON.stringify(cart));
-    }
-
-    function renderCart() {
-      cartList.innerHTML = '';
-      if (cart.length === 0) {
-        emptyCart.style.display = 'block';
-        finalizeBtn.disabled = true;
-        totalEl.textContent = '';
-        countEl.textContent = '0';
-        openBtn.classList.remove('text-pink-600');
-        saveCart();
-        return;
-      }
-      emptyCart.style.display = 'none';
-      finalizeBtn.disabled = false;
-
-      let total = 0;
-      let count = 0;
-      cart.forEach((item, index) => {
-        total += item.price * item.qty;
-        count += item.qty;
-        const li = document.createElement('li');
-        li.className = 'flex justify-between items-center border-b pb-2 gap-2';
-        li.innerHTML = `
-          <span class="flex-1">${item.name} - R$ ${item.price.toFixed(2)}</span>
-          <div class="flex items-center gap-2">
-            <button class="px-2 bg-gray-200 rounded" onclick="changeQty(${index}, -1)">-</button>
-            <span>${item.qty}</span>
-            <button class="px-2 bg-gray-200 rounded" onclick="changeQty(${index}, 1)">+</button>
-            <button class="text-red-500 ml-2" onclick="removeItem(${index})">✖</button>
-          </div>`;
-        cartList.appendChild(li);
-      });
-      totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
-      countEl.textContent = count;
-      openBtn.classList.add('text-pink-600');
-      saveCart();
-    }
-
-    function changeQty(index, delta) {
-      cart[index].qty += delta;
-      if (cart[index].qty <= 0) cart.splice(index, 1);
-      renderCart();
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      renderCart();
-    }
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const name = btn.dataset.name;
-        const price = parseFloat(btn.dataset.price || '0');
-        const existing = cart.find(i => i.name === name);
-        if (existing) {
-          existing.qty += 1;
-        } else {
-          cart.push({ name, price, qty: 1 });
-        }
-        renderCart();
-        panel.classList.remove('translate-x-full');
-      });
-    });
-
-    finalizeBtn.addEventListener('click', () => {
-      if (cart.length === 0) return;
-      let total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-      const lines = cart.map((item, i) =>
-  `${i + 1}. ${item.name}\nQuantidade: ${item.qty}\nValor: R$ ${(item.price * item.qty).toFixed(2)}`
-).join('\n\n');
-
-const notes = notesEl.value
-  ? `\n\n📝 Observações:\n${notesEl.value}`
-  : '';
-
-const message =
-  `Olá! 😊\n` +
-  `Gostaria de fazer um pedido na *Lira Ateliê&Crochê*:\n\n` +
-  `${lines}\n\n` +
-  `💰 *Total:* R$ ${total.toFixed(2)}` +
-  `${notes}`;
-
-const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-      window.open(url, '_blank');
-    });
-
-    renderCart();
-
-    // Modal de produto
-    const modal = document.getElementById('product-modal');
-    const closeModal = document.getElementById('close-modal');
-    const modalImg = document.getElementById('modal-image');
-    const modalName = document.getElementById('modal-name');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalPrice = document.getElementById('modal-price');
-    const modalAdd = document.getElementById('modal-add');
-    let currentProduct = null;
-
-    document.querySelectorAll('.product-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-to-cart')) return;
-        currentProduct = {
-          name: card.dataset.name,
-          desc: card.dataset.desc,
-          image: card.dataset.image,
-          price: parseFloat(card.dataset.price)
-        };
-        modalImg.src = currentProduct.image;
-        modalName.textContent = currentProduct.name;
-        modalDesc.textContent = currentProduct.desc;
-        modalPrice.textContent = `R$ ${currentProduct.price.toFixed(2)}`;
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      });
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    });
-
-    modalAdd.addEventListener('click', () => {
-      if (!currentProduct) return;
-      const existing = cart.find(i => i.name === currentProduct.name);
-      if (existing) existing.qty += 1;
-      else cart.push({ name: currentProduct.name, price: currentProduct.price, qty: 1 });
-      renderCart();
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      panel.classList.remove('translate-x-full');
-    });
-
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
